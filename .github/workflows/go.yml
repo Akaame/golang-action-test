@@ -1,0 +1,28 @@
+# From https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1ccbb58
+
+name: Build and test Go
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Go environment
+        uses: actions/setup-go@v2.1.3
+        with:
+          go-version: 1.16.4
+
+      - name: Check out source code
+        uses: actions/checkout@v1
+
+      - name: Build
+				env:
+					GOPROXY: "https://proxy.golang.org"
+        run: go build .
+
+      - name: Test
+				env:
+					GOPROXY: "https://proxy.golang.org"
+        run: go test -v ./...
