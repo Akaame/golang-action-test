@@ -50,3 +50,8 @@ jobs:
         run: |
           go get -u honnef.co/go/tools/cmd/staticcheck
           staticcheck ./...
+
+      - name: Review Linting
+        run: |
+          go get -u github.com/mgechev/revive
+          make lint

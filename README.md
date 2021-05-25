@@ -28,22 +28,27 @@ pre-commit sample-config > .pre-commit-config.yaml
         args: [-c=/usr/local/bin/.yamllint]
 ```
 
+## Add revive and revive config toml
+
+Add Revive Lint step to Github Action Workflow
+By simply getting revive binary and running `make lint`
+
 # Articles
 https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1ccbb58
 
 # What to do
 
-- Caching dependencies
-- Staticcheck
-- Running revive checks
-- Running integration tests within pipeline
-- Running workflows on tag pushes and generating artifacts for releases
-- Creating docker images within actions
-- Connecting to GCP Registry within Actions
-- Using helm, tf, pulumi within pipelines
-- Adding private repositories to goproxy settings
-- Using buf build tool within github actions
-- Using scripts, makefiles, taskfiles within actions
+- [x] Caching dependencies
+- [x] Staticcheck
+- [x] Running revive checks
+- [ ] Running integration tests within pipeline
+- [ ] Running workflows on tag pushes and generating artifacts for releases
+- [ ] Creating docker images within actions
+- [ ] Connecting to GCP Registry within Actions
+- [ ] Using helm, tf, pulumi within pipelines
+- [ ] Adding private repositories to goproxy settings
+- [ ] Using buf build tool within github actions
+- [ ] Using scripts, makefiles, taskfiles within actions
 
 # Things to read about
 
