@@ -9,19 +9,42 @@ Go to various golang actions by official repo and the community and add them to 
 https://github.com/actions/setup-go
 https://github.com/mvdan/github-actions-golang
 
+First pipeline failed because I had an error in yml
+https://github.com/Akaame/golang-action-test/actions/runs/871607998/workflow
+
+pre-commit and yaml-lint
+https://yamllint.readthedocs.io/en/stable/integration.html#integration-with-pre-commit
+
+```shell
+pre-commit install
+pre-commit sample-config > .pre-commit-config.yaml
+```
+
+```yml
+-   repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.1
+    hooks:
+    -   id: yamllint
+        args: [-c=/usr/local/bin/.yamllint]
+```
+
 # Articles
 https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1ccbb58
 
 # What to do
 
-Caching dependencies
-Staticcheck
-Running revive checks
-Running integration tests within pipeline
-Running workflows on tag pushes and generating artifacts for releases
-Creating docker images within actions
-Connecting to GCP Registry within Actions
-Using helm, tf, pulumi within pipelines
-Adding private repositories to goproxy settings
-Using buf build tool within github actions
-Using scripts, makefiles, taskfiles within actions
+- Caching dependencies
+- Staticcheck
+- Running revive checks
+- Running integration tests within pipeline
+- Running workflows on tag pushes and generating artifacts for releases
+- Creating docker images within actions
+- Connecting to GCP Registry within Actions
+- Using helm, tf, pulumi within pipelines
+- Adding private repositories to goproxy settings
+- Using buf build tool within github actions
+- Using scripts, makefiles, taskfiles within actions
+
+# Things to read about
+
+vscode://vscode.github-authentication/
