@@ -35,14 +35,16 @@ jobs:
         run: go test -v ./...
 
       - name: Cache Go modules
-        uses: actions/cache@preview
+        uses: actions/cache@v2
         with:
-          path: ~/go/pkg/mod
+          path: |
+            ~/go/pkg/mod
+            ~/.cache/go-build
+            ~/Library/Caches/go-build
+            %LocalAppData%\go-build
           key: ${{ matrix.os }}-build-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ matrix.os }}-build-${{ env.cache-name }}-
             ${{ matrix.os }}-build-
-            ${{ matrix.os }}-
 
       - name: Staticcheck
         run: |
