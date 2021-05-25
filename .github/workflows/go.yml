@@ -1,6 +1,9 @@
+---
+# yamllint disable-line rule:line-length
 # From https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1ccbb58
 
 name: Build and test Go
+# Seriously? https://github.com/adrienverge/yamllint/issues/158
 on: [push, pull_request]
 
 jobs:
