@@ -48,7 +48,10 @@ https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1cc
 - [ ] Using helm, tf, pulumi within pipelines
 - [ ] Adding private repositories to goproxy settings
 - [ ] Using buf build tool within github actions
-- [ ] Using scripts, makefiles, taskfiles within actions
+- [ ] Using scripts within actions
+- [x] Using makefiles within actions (Done in revive linting)
+- [ ] Using taskfiles within actions
+- [ ] Using ephemeral services/containers for testing
 
 # Things to read about
 
