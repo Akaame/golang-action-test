@@ -4,13 +4,18 @@
 
 name: Build and test Go
 # Seriously? https://github.com/adrienverge/yamllint/issues/158
+# yamllint disable-line rule:truthy
 on: [push, pull_request]
+
+strategy:
+  matrix:
+    os: [ubuntu-latest]
 
 jobs:
   build:
     name: Build
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Setup Go environment
         uses: actions/setup-go@v2.1.3
@@ -29,3 +34,13 @@ jobs:
         env:
           GOPROXY: "https://proxy.golang.org"
         run: go test -v ./...
+
+      - name: Cache Go modules
+        uses: actions/cache@preview
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ matrix.os }}-build-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ matrix.os }}-build-${{ env.cache-name }}-
+            ${{ matrix.os }}-build-
+            ${{ matrix.os }}-
