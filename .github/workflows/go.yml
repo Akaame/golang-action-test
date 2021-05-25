@@ -55,3 +55,17 @@ jobs:
         run: |
           go get -u github.com/mgechev/revive
           make lint
+  # https://github.community/t/trigger-job-on-tag-push-only/18076
+  release:
+    name: Release
+    if: github.event_name = 'push' && contains(github.ref, '/tags/v')
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    needs:
+      - build
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Dummy
+        run: |
+          echo "Dummy Step: ${{ github.ref }}"
