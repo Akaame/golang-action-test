@@ -52,6 +52,10 @@ https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1cc
 - [x] Using makefiles within actions (Done in revive linting)
 - [ ] Using taskfiles within actions
 - [ ] Using ephemeral services/containers for testing
+- [ ] Add codeql analysis
+- [ ] Try using ko
+- [ ] Add docker hub login and image upload
+- [ ] Try using goreleaser
 
 # Things to read about
 
