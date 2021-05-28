@@ -12,5 +12,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("%v", err)
 	}
-	logger.Info("Logger setup successfull")
+	logger.Info("Logger setup successful")
 }
