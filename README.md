@@ -39,6 +39,11 @@ https://github.com/marketplace/actions/setup-cassandra-action
 https://github.com/gocql/gocql
 https://pkg.go.dev/github.com/gocql/gocql#pkg-examples
 
+# Taskfile Installation
+
+https://taskfile.dev/#/
+brew install go-task/tap/go-task
+
 # Articles
 https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1ccbb58
 
