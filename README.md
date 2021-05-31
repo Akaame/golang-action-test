@@ -61,7 +61,7 @@ https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1cc
 - [ ] Using buf build tool within github actions
 - [ ] Using scripts within actions
 - [x] Using makefiles within actions (Done in revive linting)
-- [ ] Using taskfiles within actions
+- [x] Using taskfiles within actions
 - [x] Using ephemeral services/containers for testing
 - [ ] Add codeql analysis
 - [ ] Try using ko
