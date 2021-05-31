@@ -1,0 +1,17 @@
+---
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  build:
+    desc: builds the go binary
+    cmds:
+      - go mod tidy
+      - env GOOS={{OS}} CGO_ENABLED=0 go build -v
+
+  staticcheck:
+    desc: apply staticcheck
+    cmds:
+      - go get -u honnef.co/go/tools/cmd/staticcheck
+      - staticcheck ./...

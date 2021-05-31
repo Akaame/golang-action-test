@@ -16,6 +16,10 @@ jobs:
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Setup Taskfile executor
+        uses: arduino/setup-task@v1
+        with:
+          version: 3.4.3
       - name: Setup Go environment
         uses: actions/setup-go@v2.1.3
         with:
@@ -47,9 +51,7 @@ jobs:
             ${{ matrix.os }}-build-
 
       - name: Staticcheck
-        run: |
-          go get -u honnef.co/go/tools/cmd/staticcheck
-          staticcheck ./...
+        run: task staticcheck
 
       - name: Review Linting
         run: |
