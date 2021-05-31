@@ -8,6 +8,9 @@ name: Build and test Go
 on: [push, pull_request]
 
 jobs:
+  service:
+    cassandra:
+      image: cassandra
   build:
     name: Build
     strategy:
@@ -32,6 +35,15 @@ jobs:
         env:
           GOPROXY: "https://proxy.golang.org"
         run: go build .
+
+      - name: Setup Cassandra
+        uses: fabasoad/setup-cassandra-action@v1.0.2
+        with:
+          host: cassandra
+          port: 9042
+          connect-timeout: 30
+          keyspace: messaging
+          scripts_path: './cassandra-scripts'
 
       - name: Test
         env:

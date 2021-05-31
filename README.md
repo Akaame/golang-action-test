@@ -33,6 +33,12 @@ pre-commit sample-config > .pre-commit-config.yaml
 Add Revive Lint step to Github Action Workflow
 By simply getting revive binary and running `make lint`
 
+## Cassandra Setup
+
+https://github.com/marketplace/actions/setup-cassandra-action
+https://github.com/gocql/gocql
+https://pkg.go.dev/github.com/gocql/gocql#pkg-examples
+
 # Articles
 https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1ccbb58
 
@@ -51,11 +57,13 @@ https://presstige.io/p/Using-GitHub-Actions-with-Go-2ca9744b531f4f21bdae9976d1cc
 - [ ] Using scripts within actions
 - [x] Using makefiles within actions (Done in revive linting)
 - [ ] Using taskfiles within actions
-- [ ] Using ephemeral services/containers for testing
+- [x] Using ephemeral services/containers for testing
 - [ ] Add codeql analysis
 - [ ] Try using ko
 - [ ] Add docker hub login and image upload
 - [ ] Try using goreleaser
+- [ ] Add CQL sanity checks
+- [x] Add testcontainers for local testing
 
 # Things to read about
 
